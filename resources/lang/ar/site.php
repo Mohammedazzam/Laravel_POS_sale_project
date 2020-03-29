@@ -1,5 +1,8 @@
 <?php
 
 return[
-  'dashboard' => 'الرئيسية'
+  'dashboard' => 'الرئيسية',
+
+
+   'users' =>'المشرفين'
 ];
