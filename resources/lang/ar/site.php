@@ -11,6 +11,10 @@ return[
     'password' =>'كلمة المرور',
     'password_confirmation' =>'تأكيد كلمة المرور',
 
+    'added_successfully' => 'تم إضافة البيانات بنجاح',
+    'updated_successfully' => 'تم تعديل البيانات بنجاح',
+    'deleted' => 'تم حذف البيانات بنجاح',
+
     'no_data_found'=>'للأسف لايوجد أي سجلات',
 
    'users' =>'المشرفين',

@@ -33,6 +33,15 @@ class UserController extends Controller
             'password' => 'required|confirmed',
         ]);
 
+        $request_date = $request->except(['password']);
+        $request_date['password'] = bcrypt($request->password);
+
+        $user = User::create($request_date);
+
+        session()->flash('success', __('site.added_successfully'));
+
+        return redirect()->route('dashboard.users.index');
+
     }//end of store
 
 
