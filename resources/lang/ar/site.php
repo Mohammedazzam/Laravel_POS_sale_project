@@ -4,7 +4,10 @@ return[
   'dashboard' => 'الرئيسية',
 
     'add' => 'أضف',
+    'create' => 'إضافة',
+    'reade' => 'عرض',
     'edit' => 'تعديل',
+    'update' => 'تعديل',
     'delete' => 'حذف',
     'search' => 'بحث',
 
@@ -22,5 +25,10 @@ return[
     'last_name' => 'الإسم الأخير',
     'email' => 'البريد الإلكتروني',
     'action' => 'اكشن',
+
+
+    'permissions' => 'الصلاحيات',
+
+
 
 ];

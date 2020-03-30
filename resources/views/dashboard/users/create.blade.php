@@ -60,6 +60,35 @@
 
 
                         <div class="form-group">
+                            <label @lang('site.permissions')></label>
+
+                            <div class="nav-tabs-custom">
+
+                                <ul class="nav nav-tabs">
+
+                                    <li class="active"> <a href="#users" data-toggle="tab">@lang('site.users')</a></li>
+
+                                </ul>
+
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="users">
+
+                                        <label><input type="checkbox" name="permissions[]" value="create_users">@lang('site.create')</label>
+                                        <label><input type="checkbox" name="permissions[]" value="reade_users">@lang('site.reade')</label>
+                                        <label><input type="checkbox" name="permissions[]" value="update_users">@lang('site.update')</label>
+                                        <label><input type="checkbox" name="permissions[]" value="delete_users">@lang('site.delete')</label>
+
+
+                                    </div><!--end of tab content-->
+                                </div>
+
+                            </div><!--end of nav tabs-->
+
+
+                        </div><!--end of form group-->
+
+
+                        <div class="form-group">
                             <button type="submit" class="btn btn-primary"><i class="fa fa-plus"></i>@lang('site.add')</button>
                         </div>
 
