@@ -19,7 +19,7 @@
 
             <div class="box box-primary">
 
-                <div class="box-header">
+                <div class="box-header with-border">
 
                     <h3 class="box-title">@lang('site.users')</h3>
 
@@ -30,7 +30,8 @@
                             </div>
 
                             <div class="col-md-4">
-                                <button type="submit" class="btn btn-primary">@lang('site.search')</button>
+                                <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i>@lang('site.search')</button>
+                                <a href="{{route('dashboard.users.create')}}" class="btn btn-primary"><i class="fa fa-plus"></i>@lang('site.add')</a>
                             </div>
 
                         </div>
@@ -41,7 +42,7 @@
                 <div class="box-body">
 
                     @if($users->count() > 0 )
-                        <table class="table table-bordered">
+                        <table class="table table-hover">
 
                             <thead>
                             <tr>
