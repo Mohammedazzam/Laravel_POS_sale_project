@@ -26,6 +26,8 @@ class UserController extends Controller
     public function store(Request $request)
     {
 
+//        dd($request->all());
+
         $request->validate([
             'first_name' => 'required',
             'last_name' => 'required',
@@ -33,10 +35,14 @@ class UserController extends Controller
             'password' => 'required|confirmed',
         ]);
 
-        $request_date = $request->except(['password']);
+        $request_date = $request->except(['password','password_confirmation','permissions']);
         $request_date['password'] = bcrypt($request->password);
 
         $user = User::create($request_date);
+
+        $user->attachRole('admin'); //هذه عبارة عن رول اسمها admin
+
+        $user->syncPermissions($request->permissions);
 
         session()->flash('success', __('site.added_successfully'));
 
