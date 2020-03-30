@@ -6,7 +6,7 @@
 
         <section class="content-header">
 
-            <h1>Blank page
+            <h1>@lang('site.dashboard')
                 <small>it all starts here</small>
             </h1>
 

@@ -17,7 +17,7 @@
 
         <section class="content">
 
-            <h1>This is dashboard</h1>
+
 
         </section><!-- end of content -->
 
