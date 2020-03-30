@@ -23,6 +23,19 @@
 
                     <h3 class="box-title">@lang('site.users')</h3>
 
+                    <form action="">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <input type="text" name="search" class="form-control" placeholder="@lang('site.search')">
+                            </div>
+
+                            <div class="col-md-4">
+                                <button type="submit" class="btn btn-primary">@lang('site.search')</button>
+                            </div>
+
+                        </div>
+                    </form>
+
                 </div><!--end of box header-->
 
                 <div class="box-body">
