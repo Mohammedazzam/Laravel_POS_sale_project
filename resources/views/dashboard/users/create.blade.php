@@ -64,22 +64,38 @@
 
                             <div class="nav-tabs-custom">
 
+                                @php
+
+                                    $models = ['users','categories','products']
+
+                                @endphp
+
                                 <ul class="nav nav-tabs">
 
-                                    <li class="active"> <a href="#users" data-toggle="tab">@lang('site.users')</a></li>
+
+                                    @foreach($models as $index=>$model)
+
+                                        <li class="{{$index == 0 ? 'active': ''}}"> <a href="#{{$model}}" data-toggle="tab">@lang('site.'. $model)</a></li>
+
+                                    @endforeach
 
                                 </ul>
 
                                 <div class="tab-content">
-                                    <div class="tab-pane active" id="users">
 
-                                        <label><input type="checkbox" name="permissions[]" value="create_users">@lang('site.create')</label>
-                                        <label><input type="checkbox" name="permissions[]" value="reade_users">@lang('site.reade')</label>
-                                        <label><input type="checkbox" name="permissions[]" value="update_users">@lang('site.update')</label>
-                                        <label><input type="checkbox" name="permissions[]" value="delete_users">@lang('site.delete')</label>
+                                    @foreach($models as $index=>$model)
+
+                                        <div class="tab-pane {{$index == 0 ? 'active': ''}}" id="{{$model}}">
+
+                                            <label><input type="checkbox" name="permissions[]" value="create_{{$model}}">@lang('site.create')</label>
+                                            <label><input type="checkbox" name="permissions[]" value="reade_{{$model}}">@lang('site.reade')</label>
+                                            <label><input type="checkbox" name="permissions[]" value="update_{{$model}}">@lang('site.update')</label>
+                                            <label><input type="checkbox" name="permissions[]" value="delete_{{$model}}">@lang('site.delete')</label>
 
 
-                                    </div><!--end of tab content-->
+                                        </div><!--end of tab content-->
+
+                                    @endforeach
                                 </div>
 
                             </div><!--end of nav tabs-->
