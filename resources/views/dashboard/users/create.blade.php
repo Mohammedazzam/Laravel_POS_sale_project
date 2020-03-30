@@ -6,13 +6,13 @@
 
         <section class="content-header">
 
-                <h1>@lang('site.users')</h1>
+            <h1>@lang('site.users')</h1>
 
-                <ol class="breadcrumb">
-                    <li><a href="{{route('dashboard.index')}}"><i class="fa fa-dashboard"></i> @lang('site.dashboard')</a></li>
-                    <li><a href="{{route('dashboard.users.index')}}">@lang('site.users')</a></li>
-                    <li class="active">@lang('site.add')</li>
-                </ol>
+            <ol class="breadcrumb">
+                <li><a href="{{route('dashboard.index')}}"><i class="fa fa-dashboard"></i> @lang('site.dashboard')</a></li>
+                <li><a href="{{route('dashboard.users.index')}}">@lang('site.users')</a></li>
+                <li class="active">@lang('site.add')</li>
+            </ol>
         </section>
 
         <section class="content">
@@ -27,7 +27,7 @@
 
                 <div class="box-body">
 
-                    @include('partials._errors') <!--قمت باستدعء رسالة الخطأ-->
+                @include('partials._errors') <!--قمت باستدعء رسالة الخطأ-->
                     <form action="{{route('dashboard.users.store')}}" method="post">
 
                         {{csrf_field()}}
@@ -67,11 +67,9 @@
 
 
                                 @php
-                                //قمت بعمل هذه الأراي حتى أختصر على نفسي وما أكرر في الكود واسم هذه الطريقة dry) dont repeat yourself
-                                    $models = ['users','categories','products'];
-
-                                    $maps = ['create','reade','update','delete']
-
+                                    //قمت بعمل هذه الأراي حتى أختصر على نفسي وما أكرر في الكود واسم هذه الطريقة dry) dont repeat yourself
+                                        $models = ['users','categories','products'];
+                                        $maps = ['create','reade','update','delete']
                                 @endphp
 
                                 <ul class="nav nav-tabs">
