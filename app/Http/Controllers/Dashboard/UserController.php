@@ -54,13 +54,14 @@ class UserController extends Controller
 
     public function edit(User $user)
     {
-        //
-    }
+        return view('dashboard.users.edit',compact('user'));
+
+    }//end of edit
 
     public function update(Request $request, User $user)
     {
         //
-    }
+    }//end of update
 
     public function destroy(User $user)
     {
