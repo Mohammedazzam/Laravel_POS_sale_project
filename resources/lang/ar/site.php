@@ -8,6 +8,9 @@ return[
     'delete' => 'حذف',
     'search' => 'بحث',
 
+    'password' =>'كلمة المرور',
+    'password_confirmation' =>'تأكيد كلمة المرور',
+
     'no_data_found'=>'للأسف لايوجد أي سجلات',
 
    'users' =>'المشرفين',

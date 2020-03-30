@@ -27,7 +27,46 @@
 
                 <div class="box-body">
 
-                </div>
+                    @include('partials._errors') <!--قمت باستدعء رسالة الخطأ-->
+                    <form action="{{route('dashboard.users.store')}}" method="post">
+
+                        {{csrf_field()}}
+                        {{method_field('post')}}
+
+                        <div class="form-group">
+                            <label>@lang('site.first_name')</label>
+                            <input type="text" name="first_name" class="form-control" value="{{old('first_name')}}">
+                        </div>
+
+                        <div class="form-group">
+                            <label>@lang('site.last_name')</label>
+                            <input type="text" name="last_name" class="form-control" value="{{old('last_name')}}">
+                        </div>
+
+                        <div class="form-group">
+                            <label>@lang('site.email')</label>
+                            <input type="email" name="email" class="form-control" value="{{old('email')}}">
+                        </div>
+
+                        <div class="form-group">
+                            <label>@lang('site.password')</label>
+                            <input type="password" name="password" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label>@lang('site.password_confirmation')</label>
+                            <input type="password" name="password_confirmation" class="form-control">
+                        </div>
+
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary"><i class="fa fa-plus"></i>@lang('site.add')</button>
+                        </div>
+
+
+                    </form>
+
+                </div><!--end of body-->
 
             </div><!--end of box-->
 
