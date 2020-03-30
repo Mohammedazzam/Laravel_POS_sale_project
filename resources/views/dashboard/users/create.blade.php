@@ -60,13 +60,17 @@
 
 
                         <div class="form-group">
+
                             <label @lang('site.permissions')></label>
 
                             <div class="nav-tabs-custom">
 
-                                @php
 
-                                    $models = ['users','categories','products']
+                                @php
+                                //قمت بعمل هذه الأراي حتى أختصر على نفسي وما أكرر في الكود واسم هذه الطريقة dry) dont repeat yourself
+                                    $models = ['users','categories','products'];
+
+                                    $maps = ['create','reade','update','delete']
 
                                 @endphp
 
@@ -87,10 +91,10 @@
 
                                         <div class="tab-pane {{$index == 0 ? 'active': ''}}" id="{{$model}}">
 
-                                            <label><input type="checkbox" name="permissions[]" value="create_{{$model}}">@lang('site.create')</label>
-                                            <label><input type="checkbox" name="permissions[]" value="reade_{{$model}}">@lang('site.reade')</label>
-                                            <label><input type="checkbox" name="permissions[]" value="update_{{$model}}">@lang('site.update')</label>
-                                            <label><input type="checkbox" name="permissions[]" value="delete_{{$model}}">@lang('site.delete')</label>
+                                            @foreach($maps as $map)
+                                                <label><input type="checkbox" name="permissions[]" value="{{$map.'_'. $model}}">@lang('site.'.$map)</label>
+                                            @endforeach
+
 
 
                                         </div><!--end of tab content-->
