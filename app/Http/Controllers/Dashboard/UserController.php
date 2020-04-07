@@ -41,9 +41,7 @@ class UserController extends Controller
         $user = User::create($request_date);
 
         $user->attachRole('admin'); //هذه عبارة عن رول اسمها admin
-
         $user->syncPermissions($request->permissions);
-
         session()->flash('success', __('site.added_successfully'));
 
         return redirect()->route('dashboard.users.index');
@@ -60,7 +58,19 @@ class UserController extends Controller
 
     public function update(Request $request, User $user)
     {
-        //
+        $request->validate([
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'email' => 'required',
+         ]);
+
+        $request_date = $request->except(['permissions']);
+        $user->update($request_date);
+
+        $user->syncPermissions($request->permissions);
+        session()->flash('success', __('site.updated_successfully'));
+        return redirect()->route('dashboard.users.index');
+
     }//end of update
 
     public function destroy(User $user)

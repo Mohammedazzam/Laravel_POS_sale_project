@@ -61,7 +61,8 @@
 
                         <div class="form-group">
 
-                            <label @lang('site.permissions')></label>
+                            <label>@lang('site.permissions')</label>
+
 
                             <div class="nav-tabs-custom">
 
