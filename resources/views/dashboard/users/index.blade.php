@@ -73,9 +73,9 @@
 
                                             @if(auth()->user()->hasPermission('update_users'))
 
-                                                <a href="{{route('dashboard.users.edit',$user->id)}}" class="btn btn-info btn-sm">@lang('site.edit')</a>
+                                                <a href="{{route('dashboard.users.edit',$user->id)}}" class="btn btn-info btn-sm"><i class="fa fa-edit"></i>@lang('site.edit')</a>
                                                 @else
-                                                <a href="#" class="btn btn-info btn-sm disabled">@lang('site.edit')</a>
+                                                <a href="#" class="btn btn-info btn-sm disabled"><i class="fa fa-edit"></i>@lang('site.edit')</a>
 
                                             @endif
 
@@ -86,10 +86,10 @@
                                                     {{csrf_field()}}
                                                     {{method_field('delete')}}
 
-                                                    <button type="submit" class="btn btn-danger btn-sm">@lang('site.delete')</button>
+                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i>@lang('site.delete')</button>
                                                 </form>
                                             @else
-                                                <button class="btn btn-danger disabled">@lang('site.delete')</button>
+                                                <button class="btn btn-danger disabled"><i class="fa fa-trash"></i>@lang('site.delete')</button>
 
                                             @endif
 
