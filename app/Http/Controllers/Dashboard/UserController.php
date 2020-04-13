@@ -8,6 +8,15 @@ use App\Http\Controllers\Controller;
 
 class UserController extends Controller
 {
+    //هذا الكونستراكتور لمنع الدخول من خلال الراوابط
+    public function __construct(){
+        $this->middleware(['permission:read_users'])->only(['index']); //طبقتها على فانكشن ال index
+        $this->middleware(['permission:create_users'])->only(['create']);
+        $this->middleware(['permission:update_users'])->only(['update']);
+        $this->middleware(['permission:delete_users'])->only(['destroy']);
+    }
+
+
     public function index()
     {
         $users = User::all();
