@@ -17,11 +17,21 @@ class UserController extends Controller
     }
 
 
-    public function index()
+    public function index(Request $request)
     {
-        $users = User::whereRoleIs('admin')->get(); //هيك راح يظهر اليوزر ال admin فقط من دون ال super
+//        dd($request->all());
+
+        if ($request->search){
+//            dd($request->all());
+            $users = User::where('first_name','like','%'. $request->search . '%')
+            ->orWhere('last_name','like','%'. $request->search . '%')
+            ->get();
+        }else{
+            $users = User::whereRoleIs('admin')->get(); //هيك راح يظهر اليوزر ال admin فقط من دون ال super
+        }
         return view('dashboard.users.index',compact('users'));
-    }
+
+}
 
 
 
