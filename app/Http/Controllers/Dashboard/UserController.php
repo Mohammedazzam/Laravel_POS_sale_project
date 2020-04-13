@@ -19,7 +19,7 @@ class UserController extends Controller
 
     public function index()
     {
-        $users = User::all();
+        $users = User::whereRoleIs('admin')->get(); //هيك راح يظهر اليوزر ال admin فقط من دون ال super
         return view('dashboard.users.index',compact('users'));
     }
 
